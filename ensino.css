@@ -1,0 +1,185 @@
+/* Estilos Gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #2c3e50;
+  padding: 10px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav .logo h1 {
+  color: #fff;
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+nav .nav-links li {
+  margin: 0 15px;
+}
+
+nav .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav .buttons {
+  display: flex;
+  gap: 15px;
+}
+
+nav .login-btn, nav .register-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+nav .login-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+nav .register-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+nav .login-btn:hover {
+  background-color: #2980b9;
+}
+
+nav .register-btn:hover {
+  background-color: #2ecc71;
+}
+
+/* Seção de Introdução */
+.intro {
+  background-color: #3498db;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 18px;
+}
+
+.intro .intro-image img {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção de Como Funciona */
+.how-it-works {
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.how-it-works h3 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.step {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.step h4 {
+  font-size: 24px;
+  color: #e74c3c;
+}
+
+.step p {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+/* Seção de Depoimentos */
+.testimonials {
+  background-color: #ecf0f1;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.testimonials h3 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonial-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial-item p {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+.testimonial-item h4 {
+  font-size: 18px;
+  color: #e74c3c;
+}
+
+/* Seção de Chamada para Ação */
+.cta {
+  background-color: #2ecc71;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.cta h3 {
+  font-size: 36px;
+  margin-bottom: 20px;

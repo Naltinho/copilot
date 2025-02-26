@@ -1,0 +1,327 @@
+/* Estilos Gerais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #2c3e50;
+  padding: 10px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+nav .logo h1 {
+  color: #fff;
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+nav .nav-links li {
+  margin: 0 15px;
+}
+
+nav .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav .buttons {
+  display: flex;
+  gap: 15px;
+}
+
+nav .login-btn, nav .register-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+nav .login-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+nav .register-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+nav .login-btn:hover {
+  background-color: #2980b9;
+}
+
+nav .register-btn:hover {
+  background-color: #2ecc71;
+}
+
+/* Seção de Introdução ao Curso */
+.course-intro {
+  background-color: #2980b9;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.course-intro h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.course-intro p {
+  font-size: 18px;
+}
+
+.course-intro .course-image img {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+/* Seção de Conteúdo do Curso */
+.course-content {
+   
+  max-width:100%;
+   
+  background-color: #fff;
+  padding: 30px 10px;
+  text-align: center;
+}
+
+.course-content{
+
+    max-width:100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.course-content h3 {
+  font-size: 32px;
+  margin-bottom:10px;
+  color: #2c3e50;
+}
+/* ===== [CORREÇÕES] Container Principal ===== */
+.content-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== [CORREÇÕES] Itens Individuais ===== */
+.content-list {
+  flex: 1 1 calc(33.33% - 20px); /* 3 colunas */
+  min-width: 250px;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden; /* Adicionado para imagens */
+}
+
+.content-list:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== [CORREÇÃO] Conteúdo Interno ===== */
+.content-item {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: inherit; /* Mantém a cor padrão do texto */
+}
+
+/* ===== [NOVO] Responsividade ===== */
+@media (max-width: 992px) {
+  .content-list {
+    flex: 1 1 calc(50% - 20px); /* 2 colunas em tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .content-list {
+    flex: 1 1 100%; /* 1 coluna em mobile */
+  }
+}
+.content-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.content-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #e74c3c;
+}
+
+.content-item h4 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin: 20px 0;
+  padding: 0 15px;
+}
+
+.content-item p {
+  font-size: 16px;
+  color: #7f8c8d;
+  padding: 0 20px 25px;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Estiliza a barra de rolagem */
+.content-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.content-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.content-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.content-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Seção de Benefícios */
+.course-benefits {
+  background-color: #ecf0f1;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.course-benefits h3 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.benefits {
+  display: flex;
+  justify-content: space-around;
+}
+
+.benefit {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.benefit img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.benefit h4 {
+  font-size: 24px;
+  color: #e74c3c;
+}
+
+.benefit p {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+/* Seção de Depoimentos */
+.course-testimonials {
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.course-testimonials h3 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.carousel-item {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.carousel-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.carousel-item p {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+.carousel-item h4 {
+  font-size: 18px;
+  color: #e74c3c;
+}
+
+/* Seção de Inscrição */
+.course-enroll {
+  background-color: #2ecc71;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.course-enroll h3 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.course-enroll p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.enroll-btn {
+  background-color: #e74c3c;
+  padding: 15px 40px;
+  font-size: 18px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.enroll-btn:hover {
+  background-color: #c0392b;
+}

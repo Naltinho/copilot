@@ -1,0 +1,329 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #2c3e50;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.login-btn, .register-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.login-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.register-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Perfil do Professor */
+.professor-profile {
+    background-color: #fff;
+}
+
+.profile-header {
+    position: relative;
+    height: 400px;
+}
+
+.profile-cover {
+    height: 250px;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+}
+
+.profile-info {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.disciplina {
+    color: #7f8c8d;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.badges span {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+/* Sobre o Professor */
+.about-professor {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h3 {
+    color: #e74c3c;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+/* Metodologia */
+.methodology {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.method-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.method-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Horários */
+.schedule {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.schedule-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.schedule-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.schedule-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* Avaliações */
+.reviews {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.review-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.review-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.review-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.stars {
+    color: #f1c40f;
+    margin: 10px 0;
+}
+
+/* Contato */
+.contact {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .method-cards,
+    .schedule-grid,
+    .review-cards,
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .method-card,
+    .schedule-card,
+    .review-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .stats {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .buttons {
+        display: none;
+    }
+} 

@@ -1,0 +1,284 @@
+## Estrutura do projeto de gestão e divulgação de professores domiciliares(sem framework) observação todas as partes do administrador devem comunicar com os ficheiros  em php já existente
+*   **Pastas: **
+    *   **administrador**:*
+        *   `index.php`: Página inicial do painel administrativo ou seja o dashboard (design como AdminLTE, sem usar o AdminLTE), o objectivo é controlar as paginas de professores, noticias e serviços
+        *   `noticias.php`: Gerenciamento de notícias (criar, editar, excluir a noticia que estará no front end) .
+        *   `candidaturas.php`: Gerenciamento de candidaturas de professores.
+        *   `professores.php`: Gerenciamento de professores (cadastrar(nome completo, email, idiomas falados, qualificações academicas e breve biografia), editar, listar).
+         *   `listar-alunos.php`: Gerenciamento de alunos cadastrados ou registados.
+       *   `login.php`: Página de login do administrador.
+        *   `logout.php`: Página de logout do administrador.
+        *   `css/`, `js/`, `img/`: Pastas para arquivos CSS, JavaScript e imagens.
+    *   **alunos**:*
+        *   `index.php`: Página inicial do aluno (após login).
+        *   `registro.php`:é Página de registro de novos alunos.
+        *   `login.php`: é Página de login do aluno.
+        *   `serviços.php`: Página com lista de disciplinas e professores disponíveis.
+        *   `pagamento.php`: Página para processar o pagamento do curso.
+        *   `css/`, `js/`, `img/`: Pastas para arquivos CSS, JavaScript e imagens.
+    *   **professores**:*
+        *   `index.php`: Página inicial do professor (após login).
+        *   `login.php`: Página de login do professor.
+        *   `serviços.php`: já existe como serviços.html é só converter em php para receber dados do administrador Página com informações sobre as disciplinas que o professor leciona.
+        *   `css/`, `js/`, `img/`: Pastas para arquivos CSS, JavaScript e imagens.
+    *   **includes**:*
+        *   `conexao.php`: Arquivo com a conexão ao banco de dados MySQL.
+        *   `funcoes.php`: Arquivo com funções úteis para o sistema.
+    *   `index.php`: Página inicial do site (página de vendas).
+    *   `css/`, `js/`, `img/`: Pastas para arquivos CSS, JavaScript e imagens.
+    sem esquecer de ter o front end para o usuario visualizar a pagina inicial 
+
+## Banco de dados (MySQL)
+
+*   **Tabelas:**
+    *   `administradores`: Dados dos administradores (nome, email, senha).
+    *   `professores`: Dados dos professores (nome, email, senha, disciplinas, localização).
+    *   `alunos`: Dados dos alunos (nome, email, senha, disciplinas matriculadas).
+    *   `disciplinas`: Disciplinas oferecidas (nome, descrição, preço).
+    *   `matriculas`: Registro de matrículas de alunos em disciplinas (aluno, professor, disciplina, data).
+    *   `pagamentos`: Registro de pagamentos (aluno, matrícula, valor, data).
+    *   `noticias`: Notícias para a página inicial (título, conteúdo, data).
+
+## Funcionalidades
+
+1.  **Página de vendas de disciplinas tambem chamado de serviços**
+    *   Design atraente com informações sobre as disciplinas, professores e depoimentos de alunos.
+    *   Formulário de contato para tirar dúvidas.
+    *   Lista de disciplinas e professores disponíveis, com fotos e mini currículos.
+2.  **Painel administrativo (administrador):**
+    *    A penas o Design como  AdminLTE para facilitar o uso.
+    *   Gerenciamento de notícias (criar, editar, excluir).
+    *   Gerenciamento de candidaturas de professores (aprovar, rejeitar).
+    *   Gerenciamento de professores (cadastrar, editar, listar).
+    *   Estatísticas sobre vendas, alunos e professores.
+3.  **Área do aluno (alunos):**
+    *   Processamento de registro e login do formulario do index.php fora da pasta alunos(na pasta principal).
+    *   Lista de disciplinas e professores disponíveis para matrícula possibilidade de agendar os dias das semanas de aulas.
+    *   Página de pagamento (integração com Gateway de pagamento).
+    *   Sem  contato com o professor.
+4.  **Área do professor (professores):**
+    *   Página de login (os dados de login serão cadastrado pelo administrador.
+    *   Lista de alunos matriculados em suas disciplinas.
+
+## Pagamento e taxa de distância
+
+*   **Pagamento:**
+    *   Integrar um Gateway de pagamento (ex: PagSeguro, Mercado Pago ou simula )  para pagamentos online em Kwanzas. todas as disciplinas o valor é 15.000 kz
+*   **Taxa de distância:**
+    *   Calcular a distância entre a casa do aluno e do professor  usando a logica php abaixo
+    *   Adicionar a taxa de distância ao valor total do curso, caso o aluno more distante.
+    Os bairros que serão previamente cadastrados:
+
+  <h1>   Bairros do Soyo</h1>
+  <select>
+    <optgroup>
+    <option> Baixa da cidade</option>
+        <option> Kukala Kiaku</option>
+            <option>Marinha</option>
+    </optgroup>
+</select>
+        <optgroup>
+    <option> Centro da cidade</option>
+        <option> 1º de Maio Zona A</option>
+            <option> 1º de Maio Zona B</option>
+            <option> 1º de Maio Zona C</option>
+            <option> Nkulua Nganga</option>
+    </optgroup>
+    </select>
+        <select>
+            <optgroup>
+    <option> Zona nordeste </option>
+        <option> Kikudo ou Paróquia</option>
+        <option>Bundila ou Mbubu</option>
+        <option>Ilha I e II</option>
+    </optgroup>
+    </select>
+    <select>
+    <option> Zona noroeste</option>
+        <option> Fapa</option>
+            <option>Nkungue yengele</option>
+            <option>Kimbumba</option>
+            <option>Teixeira ou Projecto Cajueiro</option>
+            <option>Kami</option>
+            <option>California </option>
+            <option>Kindombele ou Kinuica</option>
+    
+    </optgroup>
+</select>
+    
+<select>
+    <optgroup>
+    <option> Zona Periférica 1 </option>
+        <option> Kintambi</option>
+        <option> Kimpondo</option>
+        <option> Olo I e II</option>
+        <option>Kitxitxu</option>
+        <option> Tuku</option>
+    </optgroup>
+    </select>
+    <select>
+<optgroup>
+        <option> Zona Periférica 2 </option>
+        <option> Pungu </option>
+        <option> Garra</option>
+        <option> Ngada Soyo</option>
+        <option>Kimpanji</option>
+        <option> Pinda</option>
+</optgroup>
+
+</select>
+<select>
+<optgroup>
+        <option> Zona Periférica 3 </option>
+        <option> Mongo Soyo </option>
+        <option> Bairro da Fina</option>
+        <option> Pangala</option>
+</optgroup>
+</select>
+<select>
+<optgroup>
+        <option> Zona Sul </option>
+        <option> Kinganga </option>
+        <option> Kitona</option>
+        <option> Bairro Militar</option>        
+</optgroup>
+
+  </select>
+
+
+  <?php
+// todos os bairros e zonas serão previamente incluidos.
+
+function calcularTaxaTransporte($bairroProfessor, $bairroAluno) {
+    // Definição dos grupos de bairros
+    $baixa = ["kukala", "marinha"];
+    $centro = ["maioA", "maioB", "maioC", "nkulua"];
+    $zonaNordeste = ["kikudo", "bundila", "ilha"];
+    $zonaNoroeste = ["fapa", "nkungue", "kimbumba", "teixeira", "kami", "california", "kindombele"];
+    $zonaPerif1 = ["kintambi", "kimpondo", "olo", "kitxitxu", "tuku"];
+    $zonaPerif2 = ["pungu", "garra", "ngada"];
+    $zonaPerif3 = ["mongo", "bairrodafina", "pangala"];
+    $zonaSul = ["kinganga", "kitona", "bairromilitar"];
+
+    // Regra 1: Bairros iguais
+    if ($bairroProfessor === $bairroAluno) {
+        return 0;
+    }
+
+    // Regras Baixa vs Baixa
+    if (in_array($bairroProfessor, $baixa) && in_array($bairroAluno, $baixa)) {
+        return 400;
+    }
+
+    // Regras Baixa vs Centro
+    if ((in_array($bairroProfessor, $baixa) && in_array($bairroAluno, $centro)) || 
+        (in_array($bairroAluno, $baixa) && in_array($bairroProfessor, $centro))) {
+        $origem = in_array($bairroProfessor, $baixa) ? $bairroProfessor : $bairroAluno;
+        $destino = in_array($bairroProfessor, $centro) ? $bairroProfessor : $bairroAluno;
+
+        if ($destino === "maioC") {
+            return ($origem === "kukala" || $origem === "marinha") ? 1000 : 600;
+        } elseif ($destino === "nkulua") {
+            return 800;
+        } else { // maioA e maioB
+            return 600;
+        }
+    }
+
+    // Regras Internas do Centro
+    if (($bairroProfessor === "maioA" && $bairroAluno === "maioB") || 
+        ($bairroProfessor === "maioB" && $bairroAluno === "maioA") || 
+        ($bairroProfessor === "maioA" && $bairroAluno === "maioC") || 
+        ($bairroProfessor === "maioC" && $bairroAluno === "maioA") || 
+        ($bairroProfessor === "maioA" && $bairroAluno === "nkulua") || 
+        ($bairroProfessor === "nkulua" && $bairroAluno === "maioA") || 
+        ($bairroProfessor === "maioB" && $bairroAluno === "maioC") || 
+        ($bairroProfessor === "maioC" && $bairroAluno === "maioB")) {
+        return 400;
+    } elseif (($bairroProfessor === "maioC" && $bairroAluno === "nkulua") || 
+              ($bairroProfessor === "nkulua" && $bairroAluno === "maioC")) {
+        return 500;
+    }
+
+    // Centro vs Zona Noroeste
+    if ((in_array($bairroProfessor, $centro) && in_array($bairroAluno, $zonaNoroeste)) || 
+        (in_array($bairroAluno, $centro) && in_array($bairroProfessor, $zonaNoroeste))) {
+        $destino = in_array($bairroProfessor, $zonaNoroeste) ? $bairroProfessor : $bairroAluno;
+        return ($destino === "kimbumba") ? 600 : 400;
+    }
+
+    // Baixa vs Zonas Noroeste/Nordeste/Periféricas/Sul
+    if ((in_array($bairroProfessor, $baixa) && in_array($bairroAluno, $zonaNoroeste)) || 
+        (in_array($bairroAluno, $baixa) && in_array($bairroProfessor, $zonaNoroeste))) {
+        return 1000;
+    } elseif ((in_array($bairroProfessor, $baixa) && in_array($bairroAluno, $zonaNordeste)) || 
+              (in_array($bairroAluno, $baixa) && in_array($bairroProfessor, $zonaNordeste))) {
+        return 1400;
+    } elseif ((in_array($bairroProfessor, $baixa) && in_array($bairroAluno, $zonaPerif1)) || 
+              (in_array($bairroAluno, $baixa) && in_array($bairroProfessor, $zonaPerif1)) || 
+              (in_array($bairroProfessor, $baixa) && in_array($bairroAluno, $zonaPerif2)) || 
+              (in_array($bairroAluno, $baixa) && in_array($bairroProfessor, $zonaPerif2)) || 
+              (in_array($bairroProfessor, $baixa) && in_array($bairroAluno, $zonaPerif3)) || 
+              (in_array($bairroAluno, $baixa) && in_array($bairroProfessor, $zonaPerif3))) {
+        return 1000;
+    } elseif ((in_array($bairroProfessor, $baixa) && in_array($bairroAluno, $zonaSul)) || 
+              (in_array($bairroAluno, $baixa) && in_array($bairroProfessor, $zonaSul))) {
+        return 1500;
+    }
+
+    // Zona Nordeste vs Periféricas/Sul
+    if ((in_array($bairroProfessor, $zonaNordeste) && in_array($bairroAluno, $zonaPerif1)) || 
+        (in_array($bairroAluno, $zonaNordeste) && in_array($bairroProfessor, $zonaPerif1)) || 
+        (in_array($bairroProfessor, $zonaNordeste) && in_array($bairroAluno, $zonaPerif2)) || 
+        (in_array($bairroAluno, $zonaNordeste) && in_array($bairroProfessor, $zonaPerif2)) || 
+        (in_array($bairroProfessor, $zonaNordeste) && in_array($bairroAluno, $zonaPerif3)) || 
+        (in_array($bairroAluno, $zonaNordeste) && in_array($bairroProfessor, $zonaPerif3))) {
+        return 800;
+    } elseif ((in_array($bairroProfessor, $zonaNordeste) && in_array($bairroAluno, $zonaSul)) || 
+              (in_array($bairroAluno, $zonaNordeste) && in_array($bairroProfessor, $zonaSul))) {
+        return 1200;
+    }
+
+    // Regras Periféricas
+    if ((in_array($bairroProfessor, $zonaPerif1) && in_array($bairroAluno, $zonaPerif1) && $bairroProfessor !== $bairroAluno) || 
+        (in_array($bairroProfessor, $zonaPerif2) && in_array($bairroAluno, $zonaPerif2) && $bairroProfessor !== $bairroAluno) || 
+        (in_array($bairroProfessor, $zonaPerif3) && in_array($bairroAluno, $zonaPerif3) && $bairroProfessor !== $bairroAluno)) {
+        return 400;
+    } elseif ((in_array($bairroProfessor, $zonaPerif1) && in_array($bairroAluno, $zonaPerif2)) || 
+              (in_array($bairroAluno, $zonaPerif1) && in_array($bairroProfessor, $zonaPerif2)) || 
+              (in_array($bairroProfessor, $zonaPerif1) && in_array($bairroAluno, $zonaPerif3)) || 
+              (in_array($bairroAluno, $zonaPerif1) && in_array($bairroProfessor, $zonaPerif3))) {
+        return 400;
+    }
+
+    // Periféricas vs Sul
+    if ((in_array($bairroProfessor, $zonaPerif1) && in_array($bairroAluno, $zonaSul)) || 
+        (in_array($bairroAluno, $zonaPerif1) && in_array($bairroProfessor, $zonaSul)) || 
+        (in_array($bairroProfessor, $zonaPerif2) && in_array($bairroAluno, $zonaSul)) || 
+        (in_array($bairroAluno, $zonaPerif2) && in_array($bairroProfessor, $zonaSul))) {
+        return 800;
+    }
+
+    // Regra Zona Sul
+    if (in_array($bairroProfessor, $zonaSul) && in_array($bairroAluno, $zonaSul) && $bairroProfessor !== $bairroAluno) {
+        return 400;
+    }
+
+    // Caso não haja uma regra definida
+    return null;
+}
+?>
+
+## Tecnologias
+
+*   **PHP:** Linguagem de programação back-end e front end.
+*   **CSS:** Estilos visuais para o site.
+*   **MySQL:** Banco de dados para armazenar os dados.
+*   **JavaScript:** Interatividade e funcionalidades no front-end.
+*  
+*   **Gateway de pagamento:** Para pagamentos online ou simule um, porque por enquanto o sistema estará offline.
+*   **Ajax:** Para funcionalidades interativas sem recarregar a página.
+  -->
+
+
+
